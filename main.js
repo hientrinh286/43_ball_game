@@ -6,12 +6,12 @@ const width_rect = 100;
 const height_rect = 10;
 const radius_circle = 10;
 let X_firstPoint_Circle = Math.floor(Math.random()*(width_canvas-2*radius_circle) + radius_circle);
-let Y_firstPoint_Circle = Math.floor(Math.random()*(height_canvas-2*radius_circle) + radius_circle);
+let Y_firstPoint_Circle = Math.floor(Math.random()*height_canvas + radius_circle);
 
 let rect = new Rectangle((width_canvas/2-width_rect/2), (height_canvas-height_rect), width_rect, height_rect);
 let bar = rect.DrawRect();
 
-let circle = new Circle(X_firstPoint_Circle, Y_firstPoint_Circle, radius_circle, 'red', 5, 5);
+let circle = new Circle(X_firstPoint_Circle, Y_firstPoint_Circle, radius_circle, 'red', 2, 2);
 let ball = circle.DrawCircle();
 
 function Play(){
@@ -46,7 +46,7 @@ window.addEventListener('keyup', function(event){
             rect.MoveRight();
             break;
         case 38:
-            circle.SpeedX *=2;
+            circle.SpeedX +=2;
             circle.SpeedY *=2;
             break;
         case 38:
@@ -62,3 +62,12 @@ function playInboxRingTone(){
     audio.play();
 }
 
+function accleratePlus() {
+    circle.SpeedX *=2;
+    circle.SpeedY *=2;
+}
+
+function acclerateMinus() {
+    circle.SpeedX /=2;
+    circle.SpeedY /=2;
+}
