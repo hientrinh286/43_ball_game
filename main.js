@@ -53,6 +53,9 @@ window.addEventListener('keyup', function(event){
             circle.SpeedX /=2;
             circle.SpeedY /=2;
             break;
+        case 32: 
+            Play();
+            break;
     }
 
 })
