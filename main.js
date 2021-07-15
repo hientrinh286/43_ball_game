@@ -11,7 +11,7 @@ let Y_firstPoint_Circle = Math.floor(Math.random()*(height_canvas-2*radius_circl
 let rect = new Rectangle((width_canvas/2-width_rect/2), (height_canvas-height_rect), width_rect, height_rect);
 let bar = rect.DrawRect();
 
-let circle = new Circle(X_firstPoint_Circle, Y_firstPoint_Circle, radius_circle, 'red');
+let circle = new Circle(X_firstPoint_Circle, Y_firstPoint_Circle, radius_circle, 'red', 5, 5);
 let ball = circle.DrawCircle();
 
 function Play(){
@@ -45,6 +45,14 @@ window.addEventListener('keyup', function(event){
         case 39:
             rect.MoveRight();
             break;
+        case 38:
+            circle.SpeedX *=2;
+            circle.SpeedY *=2;
+            break;
+        case 38:
+            circle.SpeedX /=2;
+            circle.SpeedY /=2;
+            break;
     }
 
 })
@@ -53,3 +61,4 @@ function playInboxRingTone(){
     var audio = new Audio('Warning2.mp3');
     audio.play();
 }
+

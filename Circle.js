@@ -1,11 +1,11 @@
 const PI = Math.PI;
 class Circle {
-    constructor(x, y, radius, color){
+    constructor(x, y, radius, color, SpeedX, SpeedY){
         this.x = x;
         this.y = y;
         this.radius = radius;
-        this.SpeedX = 5;
-        this.SpeedY = 5;
+        this.SpeedX = SpeedX;
+        this.SpeedY = SpeedY;
         this.canvas = document.getElementById('my-canvas');
         this.ctx = this.canvas.getContext('2d');
         this.color = color;
