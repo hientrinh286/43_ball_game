@@ -18,14 +18,18 @@ class Rectangle {
     }
 
     MoveRight(){
-        if (this.x <= this.canvas.width - this.width){
+        if (this.x <= this.canvas.width - this.width-this.Speed){
             this.x += this.Speed;
+        } else {
+            this.x +=0;
         }
     }
 
     MoveLeft(){
-        if (this.x >= 0){
+        if (this.x >= this.Speed){
             this.x -= this.Speed;
+        }  else {
+            this.x +=0;
         }
     }
 }
