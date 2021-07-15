@@ -46,7 +46,7 @@ window.addEventListener('keyup', function(event){
             rect.MoveRight();
             break;
         case 38:
-            circle.SpeedX +=2;
+            circle.SpeedX *=2;
             circle.SpeedY *=2;
             break;
         case 40:
